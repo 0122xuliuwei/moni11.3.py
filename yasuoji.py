@@ -8,7 +8,7 @@ def jsysjyl(_P_,_T_,_zf_,_Q_,n0,n,a0,a1,a2,nc):
     _Q0_ = (_Q_*0.68/ZTCS[2]) * (n0 / n)
     H0 = a0 * (_Q0_/nc) ** 2 + a1 * (_Q0_/nc) + a2
     H = H0 * (n / n0) ** 2
-    _Pc_ = ((H *9.8* (((_KV_ - 1)*ZTCS[0]/1000) / (_KV_ * _YSYZ_ * 8.314 * _T_)) + 1) ** (_KV_ / (_KV_ - 1)) * _P_)
+    _Pc_ = ((H *9.8* (((_KV_ - 1)*ZTCS[0]/1000) / (_KV_ * _YSYZ_ * 8.314 * _T_)) + 1) ** (_KV_ / (_KV_ - 1))) * _P_
     return _Pc_,H
 def jsysjwd(_T_, _Pc_,_Pj_,_zf_):
     ZTCS = _ZTCS_(_Pc_, _T_, _zf_)
@@ -22,7 +22,7 @@ def jisuanzhuansu(_Pj_,_Pc_,_Tj_,_zf_,_Q_, a0, a1, a2,n0,nc,_MD0_):
     _hhxdfzzl_ = ZTCS[0]
     _MDj_ = ZTCS[2]
     b = (_KV_ - 1) / _KV_
-    H = ((((_Pc_ / _Pj_) ** b) - 1) / b) * (1 / 9.8) * ((_YSYZ_ * 8.314 * _Tj_) / _hhxdfzzl_)
+    H = ((((_Pc_ / _Pj_) ** b) - 1) / b) * (1 / 9.8) * ((_YSYZ_ * 8.314 * _Tj_*1000) / _hhxdfzzl_)
     # X = n/n0
     # 0 = a2x**2+a1*Q*x+(a0*Q**2-H)
     a_ = a2
