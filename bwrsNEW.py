@@ -202,8 +202,3 @@ def _ZTCS_(_P_,_T_,_zf_):   #
     #计算Di
     Di = (1000/Cpp*((_T_/MD**2)*(pdwd/pdmd)-(1/MD)))
     return [hhxdfzzl, MD, ZLMD, YSYZ, H, Cpp, KV, KT, Di]
-_P_ = 101325
-_T_ = 293
-_zf_ = [97.5, 0, 0.2, 0, 0.2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.6, 0.5, 0]
-l =_ZTCS_(_P_,_T_,_zf_)
-print(l)
